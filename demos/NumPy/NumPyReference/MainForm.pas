@@ -316,6 +316,7 @@ procedure TForm1.PythonEngine1BeforeLoad(Sender: TObject);
 begin
   ShowMessage('Process is runned');
   PythonEngine1.SetPythonHome('c:\ProgramData\Anaconda3\envs\Python36_Delphi_AI_ML_Ecosystem');
+  PythonEngine1.ProgramName := 'c:\ProgramData\Anaconda3\envs\Python36_Delphi_AI_ML_Ecosystem\python.exe'
 end;
 
 end.

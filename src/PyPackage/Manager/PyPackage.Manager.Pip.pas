@@ -98,7 +98,7 @@ function TPyPackageManagerPip.BuildEnvp: TArray<string>;
 begin
   Result := ['LD_LIBRARY_PATH=' + GetPythonEngine().DllPath,
              'PYTHONHOME=' + GetPythonEngine().PythonHome,
-             'PATH=' + ExtractFilePath(GetPythonEngine().VenvPythonExe)]; //ProgramName
+             'PATH=' + ExtractFilePath(GetPythonEngine().ProgramName)];
 end;
 
 function TPyPackageManagerPip.BuildOptsList: TPyPackageManagerDefsOptsPipList;
@@ -126,7 +126,7 @@ begin
     LIn := ['-m', 'pip'] + FCmd.BuildListCmd(LOpts);
     Sleep(5000);
     LCode := TPyExecCmdService
-              .Cmd(GetPythonEngine().VenvPythonExe, //ProgramName
+              .Cmd(GetPythonEngine().ProgramName,
                   LIn,
                   BuildEnvp())
                 .Run(LOut)
@@ -150,7 +150,7 @@ begin
     + FCmd.BuildInstallCmd((FDefs as TPyPackageManagerDefsPip).InstallOptions);
 
    Result := TPyExecCmdService
-    .Cmd(GetPythonEngine().VenvPythonExe, //ProgramName
+    .Cmd(GetPythonEngine().ProgramName,
          LIn + [FDefs.PackageName],
          BuildEnvp())
       .Run(AOutput)
