@@ -44,6 +44,7 @@ type
     Memo1: TMemo;
     PythonGUIInputOutput1: TPythonGUIInputOutput;
     procedure FormCreate(Sender: TObject);
+    procedure PythonEngine1BeforeLoad(Sender: TObject);
   private
     { Private declarations }
   public
@@ -309,6 +310,11 @@ begin
     bm.print('binary repr');    
     bm.print(np.binary_repr(3));
   end;
+end;
+
+procedure TForm1.PythonEngine1BeforeLoad(Sender: TObject);
+begin
+  PythonEngine1.SetPythonHome('c:\ProgramData\Anaconda3\envs\Python36_Delphi_AI_ML_Ecosystem');
 end;
 
 end.
