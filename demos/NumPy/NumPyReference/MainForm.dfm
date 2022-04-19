@@ -26,6 +26,9 @@ object Form1: TForm1
   object PythonEngine1: TPythonEngine
     DllPath = 'c:\ProgramData\Anaconda3\envs\Python36_Delphi_AI_ML_Ecosystem\'
     OnBeforeLoad = PythonEngine1BeforeLoad
+    VenvPythonExe = 
+      'c:\ProgramData\Anaconda3\envs\Python36_Delphi_AI_ML_Ecosystem\py' +
+      'thon.exe'
     IO = PythonGUIInputOutput1
     Left = 429
     Top = 8
