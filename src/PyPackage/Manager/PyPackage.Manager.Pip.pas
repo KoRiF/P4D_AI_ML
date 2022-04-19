@@ -124,6 +124,7 @@ begin
   LOpts := BuildOptsList();
   try
     LIn := ['-m', 'pip'] + FCmd.BuildListCmd(LOpts);
+    Sleep(5000);
     LCode := TPyExecCmdService
               .Cmd(GetPythonEngine().VenvPythonExe, //ProgramName
                   LIn,

@@ -133,6 +133,7 @@ procedure TExecCmdWin.Execute;
 begin
   //Create the process
   var LCmd := FCmd + ' ' + String.Join(' ', FArg);
+  Sleep(5000);
   UniqueString(LCmd);
   if not CreateProcess(nil, PWideChar(LCmd), nil, nil, True, 0, nil, nil,
     FStartupInfo, FProcessInfo) then
