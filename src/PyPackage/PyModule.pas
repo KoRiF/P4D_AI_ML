@@ -80,6 +80,7 @@ uses
 
 procedure TPyModuleBase.CheckImported;
 begin
+  Import;
   if not IsImported() then
     raise EPyModuleNotImported.Create(ErrModuleNotImported);
 end;
@@ -129,7 +130,8 @@ end;
 
 procedure TPyModuleBase.Import;
 begin
-  ImportModule();
+  if not IsImported then
+    ImportModule();
 end;
 
 function TPyModuleBase.IsImported: boolean;
