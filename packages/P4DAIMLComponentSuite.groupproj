@@ -54,6 +54,12 @@
         <Projects Include="dclP4DOpenCV.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="P4DPillow.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclP4DPillow280.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -215,14 +221,32 @@
     <Target Name="dclP4DOpenCV:Make">
         <MSBuild Projects="dclP4DOpenCV.dproj" Targets="Make"/>
     </Target>
+    <Target Name="P4DPillow">
+        <MSBuild Projects="P4DPillow.dproj"/>
+    </Target>
+    <Target Name="P4DPillow:Clean">
+        <MSBuild Projects="P4DPillow.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="P4DPillow:Make">
+        <MSBuild Projects="P4DPillow.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclP4DPillow280">
+        <MSBuild Projects="dclP4DPillow280.dproj"/>
+    </Target>
+    <Target Name="dclP4DPillow280:Clean">
+        <MSBuild Projects="dclP4DPillow280.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclP4DPillow280:Make">
+        <MSBuild Projects="dclP4DPillow280.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="P4DCommon;P4DEnvironment;dclP4DEnvironment;P4DPyPackage;dclP4DPyPackage;P4DNumPy;dclP4DNumPy;P4DScikitLearn;dclP4DScikitLearn;P4DPyTorch;dclP4DPyTorch;P4DMatplotLib;dclMatplotLib;P4DTensorFlow;dclP4DTensorFlow;P4DOpenCV;dclP4DOpenCV"/>
+        <CallTarget Targets="P4DCommon;P4DEnvironment;dclP4DEnvironment;P4DPyPackage;dclP4DPyPackage;P4DNumPy;dclP4DNumPy;P4DScikitLearn;dclP4DScikitLearn;P4DPyTorch;dclP4DPyTorch;P4DMatplotLib;dclMatplotLib;P4DTensorFlow;dclP4DTensorFlow;P4DOpenCV;dclP4DOpenCV;P4DPillow;dclP4DPillow280"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="P4DCommon:Clean;P4DEnvironment:Clean;dclP4DEnvironment:Clean;P4DPyPackage:Clean;dclP4DPyPackage:Clean;P4DNumPy:Clean;dclP4DNumPy:Clean;P4DScikitLearn:Clean;dclP4DScikitLearn:Clean;P4DPyTorch:Clean;dclP4DPyTorch:Clean;P4DMatplotLib:Clean;dclMatplotLib:Clean;P4DTensorFlow:Clean;dclP4DTensorFlow:Clean;P4DOpenCV:Clean;dclP4DOpenCV:Clean"/>
+        <CallTarget Targets="P4DCommon:Clean;P4DEnvironment:Clean;dclP4DEnvironment:Clean;P4DPyPackage:Clean;dclP4DPyPackage:Clean;P4DNumPy:Clean;dclP4DNumPy:Clean;P4DScikitLearn:Clean;dclP4DScikitLearn:Clean;P4DPyTorch:Clean;dclP4DPyTorch:Clean;P4DMatplotLib:Clean;dclMatplotLib:Clean;P4DTensorFlow:Clean;dclP4DTensorFlow:Clean;P4DOpenCV:Clean;dclP4DOpenCV:Clean;P4DPillow:Clean;dclP4DPillow280:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="P4DCommon:Make;P4DEnvironment:Make;dclP4DEnvironment:Make;P4DPyPackage:Make;dclP4DPyPackage:Make;P4DNumPy:Make;dclP4DNumPy:Make;P4DScikitLearn:Make;dclP4DScikitLearn:Make;P4DPyTorch:Make;dclP4DPyTorch:Make;P4DMatplotLib:Make;dclMatplotLib:Make;P4DTensorFlow:Make;dclP4DTensorFlow:Make;P4DOpenCV:Make;dclP4DOpenCV:Make"/>
+        <CallTarget Targets="P4DCommon:Make;P4DEnvironment:Make;dclP4DEnvironment:Make;P4DPyPackage:Make;dclP4DPyPackage:Make;P4DNumPy:Make;dclP4DNumPy:Make;P4DScikitLearn:Make;dclP4DScikitLearn:Make;P4DPyTorch:Make;dclP4DPyTorch:Make;P4DMatplotLib:Make;dclMatplotLib:Make;P4DTensorFlow:Make;dclP4DTensorFlow:Make;P4DOpenCV:Make;dclP4DOpenCV:Make;P4DPillow:Make;dclP4DPillow280:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
